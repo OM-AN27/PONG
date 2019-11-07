@@ -71,6 +71,7 @@ html {
 }
 
 body {
+  background-color: black;
   align-items: center;
   display: flex;
   font-family: 'Silkscreen Web', monotype;
@@ -80,6 +81,7 @@ body {
 }
 
 h1 {
+  color: white;
   font-size: 2.5rem;
   margin-bottom: 1rem; 
   text-align: center;

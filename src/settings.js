@@ -8,3 +8,17 @@ export const PADDLE_COLOR = "white";
 export const PADDLE_WIDTH = 8;
 export const PADDLE_HEIGHT = 56;
 export const PADDLE_GAP = 10;
+
+export const CIRCLE_RADIOUS = 8;
+export const CIRCLE_X = 50;
+export const CIRCLE_Y = 50;
+
+
+export  const  KEYS = {
+    p1Up: "w",
+    p1Down: "s",
+    p2Up: "ArrowUp",
+    p2Down : "ArrowDown",
+    pause: " " 
+    
+}
