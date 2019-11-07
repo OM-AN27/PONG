@@ -1,4 +1,4 @@
-import { SVG_NS , PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, KEYS, CIRCLE_RADIOUS,CIRCLE_X,CIRCLE_Y} from "../settings";
+import { SVG_NS , PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, KEYS, CIRCLE_RADIOUS, BOARD_WIDTH, BOARD_HEIGHT} from "../settings";
 import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
@@ -11,7 +11,7 @@ export default class Game {
     this.Board = new Board(this.width, this.height);
     this.Paddle1 = new Paddle(PADDLE_WIDTH,  PADDLE_HEIGHT, this.height, PADDLE_GAP,  (this.height/2) - (PADDLE_HEIGHT/2), KEYS.p1Up, KEYS.p1Down);
     this.Paddle2 = new Paddle(PADDLE_WIDTH,  PADDLE_HEIGHT, this.height, this.width - PADDLE_GAP - PADDLE_WIDTH,  (this.height/2) - (PADDLE_HEIGHT/2), KEYS.p2Up, KEYS.p2Down);
-    this.mainBall = new Ball(this.width/2 , this.height/2, CIRCLE_RADIOUS);
+    this.mainBall = new Ball(BOARD_WIDTH , BOARD_HEIGHT, CIRCLE_RADIOUS);
 
 		// Other code goes here...
   }

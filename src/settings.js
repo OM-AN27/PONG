@@ -1,7 +1,7 @@
 export const SVG_NS = "http://www.w3.org/2000/svg";
 export  const BOARD_COLOR = "#353535";
-export const BOARD_WIDTH = "512";
-export const BOARD_HEIGHT = "256";
+export const BOARD_WIDTH = 512;
+export const BOARD_HEIGHT = 256;
 
 
 export const PADDLE_COLOR = "white";
@@ -10,8 +10,10 @@ export const PADDLE_HEIGHT = 56;
 export const PADDLE_GAP = 10;
 
 export const CIRCLE_RADIOUS = 8;
-export const CIRCLE_X = 50;
-export const CIRCLE_Y = 50;
+// export const CIRCLE_X = 0;
+// export const CIRCLE_Y = 0;
+export const CIRCLE_COLOR = "white";
+
 
 
 export  const  KEYS = {
