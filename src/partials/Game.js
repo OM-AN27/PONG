@@ -27,7 +27,7 @@ export default class Game {
     this.Board.render(svg);
     this.Paddle1.render(svg);
     this.Paddle2.render(svg);
-    this.mainBall.render(svg);
+    this.mainBall.render(svg, this.Paddle1, this.Paddle2);
 
 		// More code goes here....
   }

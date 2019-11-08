@@ -32,6 +32,17 @@ export default class Paddle {
 
     }
 
+    getCoordinates() {
+      return {
+
+          left: this.x,
+          top: this.y,
+          right: this.x + this.width,
+          bottom: this.y + this.height
+
+      };
+    }
+
     render(svg) {
         const rect = document.createElementNS(SVG_NS, "rect");
         rect.setAttributeNS(null, "width", this.width);
