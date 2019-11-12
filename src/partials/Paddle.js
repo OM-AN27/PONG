@@ -20,6 +20,8 @@ export default class Paddle {
         }
       });
     }
+
+
     moveUp(){
         this.y = Math.max(this.y - this.speed, 0);
     }
@@ -57,14 +59,14 @@ export default class Paddle {
     }
 
     render(svg) {
-        const rect = document.createElementNS(SVG_NS, "rect");
-        rect.setAttributeNS(null, "width", this.width);
-        rect.setAttributeNS(null, "height", this.height);
-        rect.setAttributeNS(null, "x", this.x);
-        rect.setAttributeNS(null, "y", this.y);
-        rect.setAttributeNS(null, "fill", PADDLE_COLOR);
+        const paddle = document.createElementNS(SVG_NS, "rect");
+        paddle.setAttributeNS(null, "width", this.width);
+        paddle.setAttributeNS(null, "height", this.height);
+        paddle.setAttributeNS(null, "x", this.x);
+        paddle.setAttributeNS(null, "y", this.y);
+        paddle.setAttributeNS(null, "fill", PADDLE_COLOR);
         
-        svg.appendChild(rect);
+        svg.appendChild(paddle);
         
       //...
     }

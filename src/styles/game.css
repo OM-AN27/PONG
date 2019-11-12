@@ -71,7 +71,9 @@ html {
 }
 
 body {
-  background-color: black;
+  background-image: url("../../imgs/space.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   align-items: center;
   display: flex;
   font-family: 'Silkscreen Web', monotype;
