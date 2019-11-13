@@ -10,10 +10,10 @@ export default class Ball {
       this.radius = radius;
       this.direction = 1;
       this.ping = new Audio(pingSound);
-      this.x = this.boardWidth/2;
-      this.y = this.boardHeight/2;
       this.goalOne = new Audio(goalSound);
       this.goalTwo = new Audio(goalSound2);
+      this.x = this.boardWidth/2;
+      this.y = this.boardHeight/2;
       this.reset();
     }
 
@@ -29,13 +29,13 @@ export default class Ball {
         if (hitLeft) {
           this.direction = 1;
           paddle2.increaseScore();
-          this.goalOne.play();
+          // this.goalOne.play();
             this.reset();
         }
         else if (hitRight) {
           this.direction = -1;
           paddle1.increaseScore();
-          this.goalTwo.play();
+          // this.goalTwo.play();
             this.reset();
         }
         

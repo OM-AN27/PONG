@@ -8,12 +8,15 @@ export const PADDLE_COLOR = "white";
 export const PADDLE_WIDTH = 8;
 export const PADDLE_HEIGHT = 56;
 export const PADDLE_GAP = 10;
-export const PADDLE_SPEED = 10;
+export const PADDLE_SPEED = 18;
 
 export const CIRCLE_RADIOUS = 8;
 export const CIRCLE_COLOR = "white";
 
 export const TEXT_SIZE = 30;
+
+export const WINNER_COLOR = "red";
+export const WINNER_SCORE = 5;
 
 
 
