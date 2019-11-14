@@ -19,7 +19,9 @@ export const WINNER_COLOR = "red";
 export const WINNER_SCORE = 5;
 
 export const BULLET_WIDTH = 5;
+export const BULLET_SPEED = 3;
 export const BULLET_HEIGHT= 30;
+
 
 
 
@@ -31,6 +33,8 @@ export  const  KEYS = {
     p1Down: "s",
     p2Up: "ArrowUp",
     p2Down : "ArrowDown",
-    pause: " " 
+    pause: " " ,
+    bang: "r",
+    bong: "p"
     
 }

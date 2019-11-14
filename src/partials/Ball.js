@@ -1,7 +1,7 @@
 import { SVG_NS, CIRCLE_COLOR, BOARD_WIDTH, BOARD_HEIGHT, PADDLE_WIDTH } from "../settings";
 import pingSound from '../../public/sounds/pong-03.wav';
-import goalSound from '../../public/sounds/goal1.mp3';
-import goalSound2 from '../../public/sounds/goal2.mp3';
+import goalSound from '../../public/sounds/coin.mp3';
+import goalSound2 from '../../public/sounds/rupee.mp3';
 
 export default class Ball {
     constructor(boardWidth, boardHeight, radius) {
@@ -30,14 +30,14 @@ export default class Ball {
           this.direction = 1;
           paddle2.increaseScore();
           paddle2.height -= 5;
-          // this.goalOne.play();
+          this.goalOne.play();
             this.reset();
         }
         else if (hitRight) {
           this.direction = -1;
           paddle1.increaseScore();
           paddle1.height -= 5;
-          // this.goalTwo.play();
+          this.goalTwo.play();
             this.reset();
         }
         

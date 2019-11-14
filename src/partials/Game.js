@@ -37,8 +37,8 @@ export default class Game {
 
     });
 
-		// Other code goes here...
   }
+
 
   playerWin(svg) {
     if (this.paddle1.score === WINNER_SCORE || this.paddle2.score === WINNER_SCORE) {
@@ -70,19 +70,26 @@ export default class Game {
     svg.setAttributeNS(null, "viewBox", `0 0 ${this.width} ${this.height}`);
     this.gameElement.appendChild(svg);
 
+    //Background music
     this.start.play();
     this.start.volume = 0.1;
+
     this.board.render(svg);
     this.paddle1.render(svg);
     this.paddle2.render(svg);
+
     this.mainBall.render(svg, this.paddle1, this.paddle2);
+    
     this.score1.render(svg, this.paddle1.getScore());
     this.score2.render(svg, this.paddle2.getScore());
+    //Winner
     this.playerWin(svg);
-    // this.theBullet.render(svg);
-    // this.theBullet2.render(svg);
 
-		// More code goes here....
+    //BASIC BULLET OBJECT MOVING ACROSS THE SCREEN
+    this.theBullet.render(svg);
+    this.theBullet2.render(svg);
+    this.theBullet.bulletMove(svg);
+    this.theBullet2.bulletMove2(svg);
   }
 }
 

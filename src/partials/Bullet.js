@@ -1,17 +1,26 @@
-import {SVG_NS} from '../settings';
+//BASIC DESIGN OF TWO BULLETS
+
+import {SVG_NS, BULLET_SPEED} from '../settings';
+
 
 export default class Bullet {
     
-    constructor(x, y, width, height) {
+    constructor(x, y, width, height, s) {
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
-        // this.size = size;
+        this.s = BULLET_SPEED;
     }
 
+    bulletMove(){
+        this.x += this.s;
+    }
 
-
+    bulletMove2(){
+        this.x += this.s *  -1;
+    }
+ 
 
     render(svg) {
 
