@@ -107,6 +107,11 @@ img {
   position: absolute;
   top:35%;
  right: 70%;
+}
 
-  
+.spacebar {
+  width: 30%;
+  position: absolute;
+  top:75%;
+  right: 35%;
 }

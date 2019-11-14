@@ -15,7 +15,7 @@ export default class winner {
     render(svg) {
 
         const winnerText = document.createElementNS(SVG_NS, "text");
-        winnerText.textContent = 'WINNER!!';
+        winnerText.textContent = 'P1 WINNER!!';
         winnerText.setAttributeNS(null, "x", this.x);
         winnerText.setAttributeNS(null, "y", this.y);
         winnerText.setAttributeNS(null, "font-size", this.size);

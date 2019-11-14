@@ -4,6 +4,7 @@ import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
 import winner from './winner';
+import winner2 from './winner2';
 import Bullet from './Bullet';
 import startSound from '../../public/sounds/hockey.mp3';
 import endSound from '../../public/sounds/GAME.mp3';
@@ -22,7 +23,8 @@ export default class Game {
     this.mainBall = new Ball(BOARD_WIDTH , BOARD_HEIGHT, CIRCLE_RADIOUS);
     this.score1 =  new Score(this.width / 2 - 50, 30, TEXT_SIZE);
     this.score2 =  new Score(this.width / 2 + 25, 30, TEXT_SIZE);
-    this.win = new winner(this.width/2 - 140, this.height/2, 60 );
+    this.win = new winner(this.width/2 - 190, this.height/2, 60 );
+    this.win2 = new winner2(this.width/2 - 190, this.height/2, 60 );
     this.start = new Audio(startSound);
     this.end = new Audio(endSound);
     this.theBullet = new Bullet(this.x = PADDLE_HEIGHT/2, this.height/2, BULLET_HEIGHT, BULLET_WIDTH);
@@ -40,8 +42,8 @@ export default class Game {
   }
 
 
-  playerWin(svg) {
-    if (this.paddle1.score === WINNER_SCORE || this.paddle2.score === WINNER_SCORE) {
+  player1Win(svg) {
+    if (this.paddle1.score === WINNER_SCORE) {
       this.paddle1.resetScore();
       this.paddle2.resetScore();
       this.paddle1.height = PADDLE_HEIGHT;
@@ -52,7 +54,24 @@ export default class Game {
       this.end.play();
       this.paused = true;
     }
+
   }
+
+  player2Win(svg) {
+    if (this.paddle2.score === WINNER_SCORE) {
+      this.paddle1.resetScore();
+      this.paddle2.resetScore();
+      this.paddle1.height = PADDLE_HEIGHT;
+      this.paddle2.height = PADDLE_HEIGHT;
+      this.paddle1.y =(this.height/2) - (PADDLE_HEIGHT/2);
+      this.paddle2.y =(this.height/2) - (PADDLE_HEIGHT/2);
+      this.win2.render(svg);
+      this.end.play();
+      this.paused = true;
+    }
+
+  }
+  
 
 
 
@@ -82,8 +101,10 @@ export default class Game {
     
     this.score1.render(svg, this.paddle1.getScore());
     this.score2.render(svg, this.paddle2.getScore());
+
     //Winner
-    this.playerWin(svg);
+    this.player1Win(svg);
+    this.player2Win(svg);
 
     //BASIC BULLET OBJECT MOVING ACROSS THE SCREEN
     this.theBullet.render(svg);
