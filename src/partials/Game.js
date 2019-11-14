@@ -1,9 +1,10 @@
-import { SVG_NS , PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, KEYS, CIRCLE_RADIOUS, BOARD_WIDTH, BOARD_HEIGHT, PADDLE_SPEED, TEXT_SIZE, WINNER_SCORE} from "../settings";
+import { SVG_NS , PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_GAP, KEYS, CIRCLE_RADIOUS, BOARD_WIDTH, BOARD_HEIGHT, PADDLE_SPEED, TEXT_SIZE, WINNER_SCORE, BULLET_HEIGHT, BULLET_WIDTH} from "../settings";
 import Board from './Board';
 import Paddle from './Paddle';
 import Ball from './Ball';
 import Score from './Score';
 import winner from './winner';
+import Bullet from './Bullet';
 import startSound from '../../public/sounds/hockey.mp3';
 import endSound from '../../public/sounds/GAME.mp3';
 
@@ -22,9 +23,11 @@ export default class Game {
     this.score1 =  new Score(this.width / 2 - 50, 30, TEXT_SIZE);
     this.score2 =  new Score(this.width / 2 + 25, 30, TEXT_SIZE);
     this.win = new winner(this.width/2 - 140, this.height/2, 60 );
-    this.paused = false;
     this.start = new Audio(startSound);
     this.end = new Audio(endSound);
+    this.theBullet = new Bullet(this.x = PADDLE_HEIGHT/2, this.height/2, BULLET_HEIGHT, BULLET_WIDTH);
+    this.theBullet2 = new Bullet(this.x = this.width - PADDLE_HEIGHT, this.height/2, BULLET_HEIGHT, BULLET_WIDTH);
+    this.paused = false;
     document.addEventListener("keydown", event => {
       if (event.key === KEYS.pause){
         this.paddle1.setSpeed(PADDLE_SPEED);
@@ -38,17 +41,19 @@ export default class Game {
   }
 
   playerWin(svg) {
-    if (this.paddle1.score === WINNER_SCORE) {
-      this.win.render(svg);
-      this.end.play();
-      this.paused = true;
-
-    }else if (this.paddle2.score === WINNER_SCORE) {
+    if (this.paddle1.score === WINNER_SCORE || this.paddle2.score === WINNER_SCORE) {
+      this.paddle1.resetScore();
+      this.paddle2.resetScore();
+      this.paddle1.height = PADDLE_HEIGHT;
+      this.paddle2.height = PADDLE_HEIGHT;
+      this.paddle1.y =(this.height/2) - (PADDLE_HEIGHT/2);
+      this.paddle2.y =(this.height/2) - (PADDLE_HEIGHT/2);
       this.win.render(svg);
       this.end.play();
       this.paused = true;
     }
   }
+
 
 
   render() {
@@ -74,6 +79,8 @@ export default class Game {
     this.score1.render(svg, this.paddle1.getScore());
     this.score2.render(svg, this.paddle2.getScore());
     this.playerWin(svg);
+    // this.theBullet.render(svg);
+    // this.theBullet2.render(svg);
 
 		// More code goes here....
   }

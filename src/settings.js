@@ -18,6 +18,12 @@ export const TEXT_SIZE = 30;
 export const WINNER_COLOR = "red";
 export const WINNER_SCORE = 5;
 
+export const BULLET_WIDTH = 5;
+export const BULLET_HEIGHT= 30;
+
+
+
+
 
 
 export  const  KEYS = {

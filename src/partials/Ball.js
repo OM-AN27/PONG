@@ -29,12 +29,14 @@ export default class Ball {
         if (hitLeft) {
           this.direction = 1;
           paddle2.increaseScore();
+          paddle2.height -= 5;
           // this.goalOne.play();
             this.reset();
         }
         else if (hitRight) {
           this.direction = -1;
           paddle1.increaseScore();
+          paddle1.height -= 5;
           // this.goalTwo.play();
             this.reset();
         }
