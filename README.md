@@ -1,41 +1,27 @@
-# Pong Game Starter
+# Pong Game 
 
-A starter project for a basic pong game using SVGs.
+Basic ping pong game using SVGs and Javascript to animate and react to pressed key events .
 
-## Setup
+## LEARNINGS 
 
-Ensure you have [Node.js](https://nodejs.org/en/) installed first.
+How to implement Javascript into this game to react on users event and make fun and intereactive animations.
 
-**Install dependencies:**
+## TOOLS
 
-`$ npm install`
+VS code 
+SVG's
+JavaScript
 
-**Run locally with the Parcel dev server:**
 
-`$ npm start`
+## Setup the Game 
 
-Once you run the start command you can access your project at http://localhost:3000.
+* Clone the git repository — `git clone
+  https://github.com/OM-AN27/PONG-game-project.git`  
 
-Read more about the [Parcel web application bundler here](https://parceljs.org/).
+* Install with [npm](https://www.npmjs.com/): `npm install`.
 
-## Deploy
+* Write npm run start on the git bash 
 
-The deployment workflow for this project will be a bit different from what you've used when deploying simple static websites.
 
-To deploy your finished Pong project as a GitHub page, you must first **update the `predeploy` script in the `package.json` file with the name of your repo.**
 
-For example, if your repo URL is:
 
-https://github.com/bob/pong-project
-
-Update the `predeploy` script as follows:
-
-```json
-"predeploy": "rm -rf dist && parcel build index.html --public-url /pong-project",
-```
-
-Once you have done this, you can run:
-
-`$ npm run deploy`
-
-Now check out your deployed site 🙂
