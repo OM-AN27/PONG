@@ -4,13 +4,13 @@ Basic ping pong game using SVGs and Javascript to animate and react to pressed k
 
 ## LEARNINGS 
 
-How to implement Javascript into this game to react on users event and make fun and intereactive animations.
+How to implement OOP Javascript into this game to react on users event and make fun and intereactive animations.
 
 ## TOOLS
 
-VS code 
-SVG's
-JavaScript
+- VS code 
+- SVG's
+- JavaScript
 
 
 ## Setup the Game 
