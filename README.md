@@ -20,7 +20,7 @@ JavaScript
 
 * Install with [npm](https://www.npmjs.com/): `npm install`.
 
-* Write npm run start on the git bash 
+* Run `npm run start` on the git bash 
 
 
 
