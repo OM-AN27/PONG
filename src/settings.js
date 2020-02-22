@@ -16,7 +16,7 @@ export const CIRCLE_COLOR = "white";
 export const TEXT_SIZE = 30;
 
 export const WINNER_COLOR = "red";
-export const WINNER_SCORE = 5;
+export const WINNER_SCORE = 1;
 
 export const BULLET_WIDTH = 5;
 export const BULLET_SPEED = 3;
@@ -34,7 +34,5 @@ export  const  KEYS = {
     p2Up: "ArrowUp",
     p2Down : "ArrowDown",
     pause: " " ,
-    bang: "r",
-    bong: "p"
     
 }

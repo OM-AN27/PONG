@@ -42,8 +42,10 @@ export default class Game {
   }
 
 
-  player1Win(svg) {
-    if (this.paddle1.score === WINNER_SCORE) {
+
+
+  playerWin(svg) {
+    if (this.paddle1.score  === WINNER_SCORE) {
       this.paddle1.resetScore();
       this.paddle2.resetScore();
       this.paddle1.height = PADDLE_HEIGHT;
@@ -54,11 +56,12 @@ export default class Game {
       this.end.play();
       this.paused = true;
     }
-
   }
 
+  
+
   player2Win(svg) {
-    if (this.paddle2.score === WINNER_SCORE) {
+    if (this.paddle2.score  === WINNER_SCORE) {
       this.paddle1.resetScore();
       this.paddle2.resetScore();
       this.paddle1.height = PADDLE_HEIGHT;
@@ -69,8 +72,10 @@ export default class Game {
       this.end.play();
       this.paused = true;
     }
-
   }
+
+  
+
   
 
 
@@ -103,14 +108,11 @@ export default class Game {
     this.score2.render(svg, this.paddle2.getScore());
 
     //Winner
-    this.player1Win(svg);
+    this.playerWin(svg);
     this.player2Win(svg);
+    // this.winnerText(svg);
 
-    //BASIC BULLET OBJECT MOVING ACROSS THE SCREEN
-    this.theBullet.render(svg);
-    this.theBullet2.render(svg);
-    this.theBullet.bulletMove(svg);
-    this.theBullet2.bulletMove2(svg);
+ 
   }
 }
 
